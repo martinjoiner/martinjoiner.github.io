@@ -1,5 +1,6 @@
 
 // Hello Nic! This is where you're gonna be putting data
+// Keep the indentation neat :-) 
 
 // routes is an object containing many routes
 routes = {
@@ -7,7 +8,7 @@ routes = {
 		// A route has a name and an array of legs. The series of legs makes up a circuit
 		"route_name": "West Route",
 		"legs": {
-			// A leg is a series of points and a "stop name". The last point is the location of the stop. 
+			// A leg is a series of points that lead up to a final point which is the location of the "stop". The stop has a name. 
 			"mardyke": {
 				"points": [
 					{"lat":51.44946047878631,"lng":-2.611699104309082},
@@ -23,19 +24,38 @@ routes = {
 			},
 			"cumberland": {
 				"points": [
-					{"lat":51.447829001892885,"lng":-2.616720199584961},
-				    {"lat":51.44734757134268,"lng":-2.616891860961914},
-				    {"lat":51.44713360057993,"lng":-2.6163339614868164},
-				    {"lat":51.44734757134268,"lng":-2.6157331466674805}
+					{"lat":51.4492732630874,"lng":-2.612771987915039},
+				    {"lat":51.44911279187733,"lng":-2.6128149032592773},
+				    {"lat":51.4490058107573,"lng":-2.6134586334228516},
+				    {"lat":51.44873835686053,"lng":-2.614295482635498},
+				    {"lat":51.44853776540982,"lng":-2.6150035858154297},
+				    {"lat":51.448243563021386,"lng":-2.6156258583068848},
+				    {"lat":51.44806971526447,"lng":-2.615969181060791},
+				    {"lat":51.4479493587373,"lng":-2.6168060302734375},
+				    {"lat":51.44816332567737,"lng":-2.6169776916503906}
 				],
 				"stop_name": "Cumberland Basin"
 			},
+			"novascocia": {
+				"points": [
+					{"lat":51.44816332567737,"lng":-2.6170527935028076},
+				    {"lat":51.447935985770265,"lng":-2.6169562339782715},
+				    {"lat":51.4476417795043,"lng":-2.6167845726013184},
+				    {"lat":51.447441183236094,"lng":-2.616795301437378},
+				    {"lat":51.44730745190104,"lng":-2.6170206069946285},
+				    {"lat":51.44730745190104,"lng":-2.6173317432403564},
+				    {"lat":51.44725395925736,"lng":-2.617621421813965},
+				    {"lat":51.44720715314272,"lng":-2.617642879486084}
+				],
+				"stop_name": "Nova Scocia"
+			},
 			"cottage": {
 				"points": [
-					{"lat":51.447829001892885,"lng":-2.616720199584961},
-				    {"lat":51.44734757134268,"lng":-2.616891860961914},
-				    {"lat":51.44713360057993,"lng":-2.6163339614868164},
-				    {"lat":51.44734757134268,"lng":-2.6157331466674805}
+					{"lat":51.44720046655099,"lng":-2.617642879486084},
+				    {"lat":51.44719377995829,"lng":-2.6172780990600586},
+				    {"lat":51.44699318172196,"lng":-2.617042064666748},
+				    {"lat":51.446959748596896,"lng":-2.6167309284210205},
+				    {"lat":51.44699318172196,"lng":-2.616194486618042}
 				],
 				"stop_name": "The Cottage"
 			},
@@ -72,7 +92,7 @@ routes = {
 boats = [
 	{
 		"boat_name": "Queen Mary",
-		"stops": [
+		"schedule": [
 			{
 				"time": "9:00",
 				"stop": "mardyke"
