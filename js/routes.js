@@ -587,7 +587,7 @@ boats = [
 			},
 			{
 				"time": "10:45",
-				"stop": "whappingwharfprincestreet"
+				"stop": "wappingwharfprincestreet"
 			},
 			{
 				"time": "10:50",
@@ -637,7 +637,7 @@ boats = [
 			},
 			{
 				"time": "12:45",
-				"stop": "whappingwharfprincestreet"
+				"stop": "wappingwharfprincestreet"
 			},
 			{
 				"time": "12:50",
@@ -687,7 +687,7 @@ boats = [
 			},
 			{
 				"time": "14:45",
-				"stop": "whappingwharfprincestreet"
+				"stop": "wappingwharfprincestreet"
 			},
 			{
 				"time": "14:50",
@@ -737,7 +737,7 @@ boats = [
 			},
 			{
 				"time": "16:45",
-				"stop": "whappingwharfprincestreet"
+				"stop": "wappingwharfprincestreet"
 			},
 			{
 				"time": "16:50",
