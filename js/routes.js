@@ -86,6 +86,28 @@ routes = {
 			}
 		}
 	}
+	"east": { 
+		// A route has a name and an array of legs. The series of legs makes up a circuit
+		"route_name": "East Route",
+		"legs": {
+			// A leg is a series of points that lead up to a final point which is the location of the "stop". The stop has a name. 
+			"templequaybridge": {
+				"points": [
+				    {"lat":51.45149974292567,"lng":-2.5811755657196045},
+				    {"lat":51.451553230595216,"lng":-2.5811862945556636},
+				    {"lat":51.451613404148574,"lng":-2.581239938735962},
+				    {"lat":51.45168026355929,"lng":-2.581336498260498},
+				    {"lat":51.45186078347915,"lng":-2.5817227363586426},
+				    {"lat":51.45200118736773,"lng":-2.582087516784668},
+				    {"lat":51.452288679697126,"lng":-2.5828278064727783},
+				    {"lat":51.452529369557304,"lng":-2.583514451980591},
+				    {"lat":51.45256279860421,"lng":-2.583739757537842},
+				    {"lat":51.452602913428144,"lng":-2.5839436054229736}
+				],
+				"stop_name": "Temple Bridge"
+			}
+		}
+	}
 };
 
 // boats is a numeric array containing many objects, each representing a single boat
