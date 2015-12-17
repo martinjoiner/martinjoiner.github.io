@@ -573,27 +573,39 @@ boats = [
 	},
 	{
 		"boat_name": "Matilda",
-		"route": "west",
+		"route": "east",
 		"schedule": [
 			{
-				"time": "10:00",
-				"stop": "mardyke"
+				"time": "09:50",
+				"stop": "citycentreprincestreet"
 			},
 			{
-				"time": "10:20",
-				"stop": "cumberland"
+				"time": "09:55",
+				"stop": "princestreetbathurstbasin"
 			},
 			{
-				"time": "10:30",
-				"stop": "cottage"
+				"time": "09:58",
+				"stop": "bathurstbasinredcliffbacks"
 			},
 			{
-				"time": "10:40",
-				"stop": "ssgreatbritain"
+				"time": "10:02",
+				"stop": "redcliffbackswelshback"
 			},
 			{
-				"time": "10:50",
-				"stop": "prince street"
+				"time": "10:03",
+				"stop": "welshbackcastlepark"
+			},
+			{
+				"time": "10:05",
+				"stop": "castleparktemplebridge"
+			},
+			{
+				"time": "10:07",
+				"stop": "templebridgetemplemeads"
+			},
+			{
+				"time": "10:10",
+				"stop": "templemeadstemplebridge"
 			}
 		]
 	},
