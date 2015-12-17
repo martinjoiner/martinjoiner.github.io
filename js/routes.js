@@ -540,6 +540,7 @@ routes = {
 			"citycentrecitycentre": {
 				"points": [
 				    {"lat":51.45220176360243,"lng":-2.597794532775879}
+				    {"lat":51.45220176360242,"lng":-2.597794532775878}
 				],
 				"stop_name": "City Centre"
 			}
