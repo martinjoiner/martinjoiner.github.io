@@ -550,24 +550,24 @@ boats = [
 		"route": "west",
 		"schedule": [
 			{
-				"time": "9:00",
-				"stop": "mardyke"
+				"time": "10:20",
+				"stop": "citycentrecanonsmarsh"
 			},
 			{
-				"time": "9:20",
-				"stop": "cumberland"
+				"time": "10:25",
+				"stop": "canonsmarshharbourinlet"
 			},
 			{
-				"time": "9:30",
-				"stop": "cottage"
+				"time": "10:30",
+				"stop": "harbourinletmardyke"
 			},
 			{
-				"time": "9:40",
-				"stop": "ssgreatbritain"
+				"time": "10:35",
+				"stop": "mardykepumphouse"
 			},
 			{
-				"time": "9:50",
-				"stop": "arnolfini"
+				"time": "10:38",
+				"stop": "pumphousenovascotia"
 			}
 		]
 	},
@@ -593,7 +593,7 @@ boats = [
 			},
 			{
 				"time": "10:50",
-				"stop": "arnolfini"
+				"stop": "prince street"
 			}
 		]
 	},
