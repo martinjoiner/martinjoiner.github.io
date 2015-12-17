@@ -3,7 +3,7 @@
 // --------------------------------------------------------------------- //
 
 L.mapbox.accessToken = 'pk.eyJ1IjoibWFydGluam9pbmVyIiwiYSI6ImNpaTh0Z2U0YzAwa3R0am0zbG91eXNjbGsifQ.qHn0qCslolUYqah6LM8OPw';
-var map = L.mapbox.map('map', 'examples.map-zr0njcqy')
+var map = L.mapbox.map('map', 'mapbox.streets')
           .setView([51.4505481,-2.6002987], 15);
 
 
@@ -101,6 +101,8 @@ var marker = L.marker([51.4505481,-2.6002987], {
 
 // Create a counter with a value of 0.
 var j = 0;
+// Minutes go from 0 - 1440 (1 day)
+var minute = 0;
 
 tick();
 function tick(){
@@ -117,8 +119,19 @@ function tick(){
     	j = 0;
     }
 
+    incMinute();
+
     setTimeout(tick, 100);
 
+}
+
+function incMinute(){
+    if( minute < 1440 ){
+        minute = minute + timescale;
+    } else {
+        minute = 0;
+    }
+    displayTime( Math.floor(minute / 60), minute % 60 );
 }
 
 
@@ -133,3 +146,42 @@ var gameTime = new Date();
 // 1000 means a day will take 1.44 minutes 
 var timescale = 1; 
 
+elemTimeSlider = document.getElementById('timeSlider');
+elemTimeInput = document.getElementById('TimeInput');
+
+elemTimeSlider.addEventListener("input", function(){
+	elemTimeInput.value = timescale = parseInt(this.value);
+});
+
+elemTimeInput.addEventListener("keyup", function(){
+    if( this.value > 1000 ){
+        elemTimeSlider.value = timescale = parseInt(this.value) = 1000;
+    } else {
+        elemTimeSlider.value = timescale = parseInt(this.value);
+    }
+});
+
+function displayTime( hour, minute ){
+
+    document.getElementById('numerictime').textContent = numAs2Digits(hour) + ':' + numAs2Digits(minute);
+
+    if( hour > 12 ){
+        hour = hour - 12;
+    }
+
+    var minuteHandDegrees = ( minute / 60 ) * 360;
+    document.getElementById('minuteHand').style.transform = 'rotate( ' + minuteHandDegrees + 'deg )';
+
+
+
+    var hourHandDegrees = ( ( ( hour * 60 ) + minute ) / 720 ) * 360;
+    document.getElementById('hourHand').style.transform = 'rotate( ' + hourHandDegrees + 'deg )';
+}
+
+function numAs2Digits( num ){
+    var strNum = num.toString();
+    if( num < 10 ){
+        strNum = '0' + strNum;
+    }
+    return strNum;
+}

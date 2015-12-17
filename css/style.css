@@ -2,6 +2,7 @@
 body { 
 	margin: 0; 
 	padding: 0; 
+	font-family: sans-serif;
 }
 
 #map { 
@@ -16,7 +17,7 @@ body {
 	background: rgba(255,255,255,0.8);
 	top: 8px; 
 	right: 8px;
-	padding: 20px;
+	padding: 16px;
 }
 
 .clockface{
@@ -24,8 +25,20 @@ body {
 	width: 60px;
 	padding-top: 60px;
 	height: 60px;
-	border: 2px solid #666;
+	border: 3px solid #666;
 	border-radius: 50%;
+	margin: 0 0 10px 0;
+}
+
+#numerictime{
+	display: block;
+	position: absolute;
+	font-family: monospace;
+	width: 100px;
+    margin: -34px 0 0 -50px;
+    font-size: 32px;
+    text-align: center;
+    opacity: 0.5;
 }
 
 #minuteHand,
@@ -45,14 +58,6 @@ body {
 	background: #666;
 	border-radius: 50%;
 	margin: -4px 0 0 -4px;
-}
-
-#minuteHand{
-	-webkit-animation: spin 10s infinite linear;
-}
-
-#hourHand{
-	-webkit-animation: spin 120s infinite linear;
 }
 
 #minuteHand:after{
@@ -78,6 +83,7 @@ body {
 	border-radius: 4px;
 }
 
+/* This animation is a temporary bit of CSS for deving */
 @-webkit-keyframes  spin{
 	from {
 		transform: rotate( 0deg );
@@ -86,4 +92,47 @@ body {
 		transform: rotate( 360deg );
 	}
 		
+}
+
+.timecontrols input[type=range]{
+	width: 120px;
+	margin: 0 0 10px 0;
+	float: left;
+}
+
+.timecontrols .timescale{
+	width: 120px;	
+	margin: 0 0 10px;
+	clear: left;
+	float: left;
+}
+
+.timecontrols .timescale > *{
+	display: block;
+	float: left;
+	font-size: inherit;
+	padding: 2px;
+}
+
+.timecontrols .timescale label{
+
+}
+
+.timecontrols .timescale input[type=tel]{
+	width: 40px;
+	text-align: right;
+	border: 1px solid white;
+	background: transparent;
+}
+
+.timecontrols .timescale input[type=tel]:hover,
+.timecontrols .timescale input[type=tel]:focus{
+	border: 1px solid #888;
+	cursor: pointer;
+	background: white;
+}
+
+.timecontrols .timescale input[type=tel]:focus:invalid{
+	background-color: pink;
+	color: #400;
 }
