@@ -85,7 +85,7 @@ routes = {
 				"stop_name": "The Arnolfini"
 			}
 		}
-	}
+	},
 	"east": { 
 		// A route has a name and an array of legs. The series of legs makes up a circuit
 		"route_name": "East Route",
