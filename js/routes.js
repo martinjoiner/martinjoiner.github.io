@@ -7,6 +7,7 @@ routes = {
 	"west": { 
 		// A route has a name and an array of legs. The series of legs makes up a circuit
 		"route_name": "West Route",
+		"color": "#bf0000",
 		"legs": {
 			// A leg is a series of points that lead up to a final point which is the location of the "stop". The stop has a name. 
 			"mardyke": {
@@ -89,6 +90,7 @@ routes = {
 	"east": { 
 		// A route has a name and an array of legs. The series of legs makes up a circuit
 		"route_name": "East Route",
+		"color": "#162384",
 		"legs": {
 			// A leg is a series of points that lead up to a final point which is the location of the "stop". The stop has a name. 
 			"templequaybridge": {
