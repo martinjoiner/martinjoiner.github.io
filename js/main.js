@@ -107,7 +107,7 @@ for( var i = 0, iLimit = boats.length; i < iLimit; i++ ){
 // Create a counter with a value of 0.
 var j = 0;
 // Minutes go from 0 - 1440 (1 day)
-var minute = 0;
+var minute = 480;
 
 tick();
 function tick(){
