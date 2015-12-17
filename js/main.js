@@ -92,11 +92,16 @@ function addLatlngToPoint( point ){
 // --------------------------------------------------------------------- //
 
 // Create a marker and add it to the map.
-var marker = L.marker([51.4505481,-2.6002987], {
-	icon: L.mapbox.marker.icon({
-		'marker-color': '#f86767'
-	})
-}).addTo(map);
+for( var i = 0, iLimit = boats.length; i < iLimit; i++ ){
+    boat = boats[i];
+    if( typeof boat.schedule !== 'undefined' ){
+        boat.marker = L.marker([51.4505481,-2.6002987], {
+        	icon: L.mapbox.marker.icon({
+        		'marker-color': '#f86767'
+        	})
+        }).addTo(map);
+    }
+}
 
 
 // Create a counter with a value of 0.
@@ -107,19 +112,21 @@ var minute = 0;
 tick();
 function tick(){
 
-	var jLimit = routes.west.legs.cumberland.points.length;
+	//var jLimit = routes.west.legs.cumberland.points.length;
     
-	marker.setLatLng( routes.west.legs.cumberland.points[j].latlng );
+	//marker.setLatLng( routes.west.legs.cumberland.points[j].latlng );
 
 	// Move to the next point of the line
     // until `j` reaches the length of the array.
-    if (++j < jLimit){
+    // if (++j < jLimit){
     	
-    } else {
-    	j = 0;
-    }
+    // } else {
+    // 	j = 0;
+    // }
 
     incMinute();
+
+    renderBoatLocations();
 
     setTimeout(tick, 100);
 
@@ -184,4 +191,43 @@ function numAs2Digits( num ){
         strNum = '0' + strNum;
     }
     return strNum;
+}
+
+
+
+
+function renderBoatLocations(){
+    var boat;
+    // Loop over boats querying where they should be
+    for( var i = 0, iLimit = boats.length; i < iLimit; i++ ){
+        boat = boats[i];
+        if( typeof boat.schedule !== 'undefined' ){
+            currentLeg = whereShouldYouBeNow( boat.schedule );
+            boat.marker.setLatLng( routes[boat.route].legs[currentLeg.stop].points[0].latlng );
+        }
+    }
+}
+
+function whereShouldYouBeNow( schedule ){
+    var stop,
+        previousStopTime,
+        returnStop;
+    for( var i = 0, iLimit = schedule.length; i < iLimit; i++ ){
+        stop = schedule[i];
+        if( aIsLaterThanB( convertToMins(stop.time), minute ) ){
+            return stop;
+        }
+    }
+    return stop;
+}
+
+// Take a time in the form of hh:mm and returns integer minutes
+function convertToMins( strTime ){
+    var parts = strTime.split(':');
+    return ( parseInt(parts[0]) * 60 ) + parseInt(parts[1]);
+}
+
+// Compares 2 numbers
+function aIsLaterThanB( firstMin, secondMin ){
+    return firstMin > secondMin ? true : false;
 }
