@@ -806,7 +806,70 @@ boats = [
 				"stop": "princestreetcitycentre"
 			}
 		]
-	},{
+	},
+	{
+		"boat_name": "Matilda",
+		"route": "east",
+		"schedule": [
+			{
+				"time": "10:30",
+				"stop": "citycentreprincestreet"
+			},
+			{
+				"time": "10:35",
+				"stop": "princestreetbathurstbasin"
+			},
+			{
+				"time": "10:38",
+				"stop": "bathurstbasinredcliffbacks"
+			},
+			{
+				"time": "10:42",
+				"stop": "redcliffbackswelshback"
+			},
+			{
+				"time": "10:43",
+				"stop": "welshbackcastlepark"
+			},
+			{
+				"time": "10:45",
+				"stop": "castleparktemplebridge"
+			},
+			{
+				"time": "10:47",
+				"stop": "templebridgetemplemeads"
+			},
+			{
+				"time": "10:50",
+				"stop": "templemeadstemplebridge"
+			},
+			{
+				"time": "10:52",
+				"stop": "templebridgecastlepark"
+			},
+			{
+				"time": "10:55",
+				"stop": "castleparkwelshback"
+			},
+			{
+				"time": "10:57",
+				"stop": "welshbackredcliffbacks"
+			},
+			{
+				"time": "10:58",
+				"stop": "redcliffbacksbathurstbasin"
+			},
+			{
+				"time": "11:01",
+				"stop": "bathurstbasinprincestreet"
+			},
+			{
+				"time": "11:03",
+				"stop": "princestreetcitycentre"
+			}
+		]
+	},
+	{
 		"boat_name": "Matilda",
 		"route": "east",
 		"schedule": [
@@ -864,6 +927,130 @@ boats = [
 			},
 			{
 				"time": "12:23",
+				"stop": "princestreetcitycentre"
+			}
+		]
+	},
+		{
+		"boat_name": "Matilda",
+		"route": "east",
+		"schedule": [
+			{
+				"time": "12:30",
+				"stop": "citycentreprincestreet"
+			},
+			{
+				"time": "12:35",
+				"stop": "princestreetbathurstbasin"
+			},
+			{
+				"time": "12:38",
+				"stop": "bathurstbasinredcliffbacks"
+			},
+			{
+				"time": "12:42",
+				"stop": "redcliffbackswelshback"
+			},
+			{
+				"time": "12:43",
+				"stop": "welshbackcastlepark"
+			},
+			{
+				"time": "12:45",
+				"stop": "castleparktemplebridge"
+			},
+			{
+				"time": "12:47",
+				"stop": "templebridgetemplemeads"
+			},
+			{
+				"time": "12:50",
+				"stop": "templemeadstemplebridge"
+			},
+			{
+				"time": "12:52",
+				"stop": "templebridgecastlepark"
+			},
+			{
+				"time": "12:55",
+				"stop": "castleparkwelshback"
+			},
+			{
+				"time": "12:57",
+				"stop": "welshbackredcliffbacks"
+			},
+			{
+				"time": "12:58",
+				"stop": "redcliffbacksbathurstbasin"
+			},
+			{
+				"time": "13:01",
+				"stop": "bathurstbasinprincestreet"
+			},
+			{
+				"time": "13:03",
+				"stop": "princestreetcitycentre"
+			}
+		]
+	},
+	{
+		"boat_name": "Matilda",
+		"route": "east",
+		"schedule": [
+			{
+				"time": "15:30",
+				"stop": "citycentreprincestreet"
+			},
+			{
+				"time": "15:35",
+				"stop": "princestreetbathurstbasin"
+			},
+			{
+				"time": "15:38",
+				"stop": "bathurstbasinredcliffbacks"
+			},
+			{
+				"time": "15:42",
+				"stop": "redcliffbackswelshback"
+			},
+			{
+				"time": "15:43",
+				"stop": "welshbackcastlepark"
+			},
+			{
+				"time": "15:45",
+				"stop": "castleparktemplebridge"
+			},
+			{
+				"time": "15:47",
+				"stop": "templebridgetemplemeads"
+			},
+			{
+				"time": "15:50",
+				"stop": "templemeadstemplebridge"
+			},
+			{
+				"time": "15:52",
+				"stop": "templebridgecastlepark"
+			},
+			{
+				"time": "15:55",
+				"stop": "castleparkwelshback"
+			},
+			{
+				"time": "15:57",
+				"stop": "welshbackredcliffbacks"
+			},
+			{
+				"time": "15:58",
+				"stop": "redcliffbacksbathurstbasin"
+			},
+			{
+				"time": "16:01",
+				"stop": "bathurstbasinprincestreet"
+			},
+			{
+				"time": "16:03",
 				"stop": "princestreetcitycentre"
 			}
 		]
