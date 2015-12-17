@@ -150,7 +150,7 @@ routes = {
 				],
 				"stop_name": "Welsh Back"
 			},
-			"welshbackredcliffback": {
+			"welshbackredcliffbacks": {
 				"points": [
 				    {"lat":51.45260959922873,"lng":-2.5922691822052},
 				    {"lat":51.45250931211743,"lng":-2.592220902442932},
@@ -158,9 +158,9 @@ routes = {
 				    {"lat":51.452241878743635,"lng":-2.5917434692382812},
 				    {"lat":51.45214827669268,"lng":-2.5916576385498042}
 				],
-				"stop_name": "Redcliffe Back"
+				"stop_name": "Redcliff Backs"
 			},
-			"redcliffbackbathurstbasin": {
+			"redcliffbacksbathurstbasin": {
 				"points": [
 				    {"lat":51.452241878743635,"lng":-2.5916361808776855},
 				    {"lat":51.45220176360243,"lng":-2.5917863845825195},
@@ -234,19 +234,6 @@ routes = {
 		}
 	}
 };
-
-
-/*
-
-[
-  [
-[
-  ]
-]
-
-
-*/
-
 
 
 // boats is a numeric array containing many objects, each representing a single boat
