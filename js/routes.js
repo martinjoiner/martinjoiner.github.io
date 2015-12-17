@@ -606,6 +606,30 @@ boats = [
 			{
 				"time": "10:10",
 				"stop": "templemeadstemplebridge"
+			},
+			{
+				"time": "10:12",
+				"stop": "templebridgecastlepark"
+			},
+			{
+				"time": "10:15",
+				"stop": "castleparkwelshback"
+			},
+			{
+				"time": "10:17",
+				"stop": "welshbackredcliffbacks"
+			},
+			{
+				"time": "10:18",
+				"stop": "redcliffbacksbathurstbasin"
+			},
+			{
+				"time": "10:21",
+				"stop": "bathurstbasinprincestreet"
+			},
+			{
+				"time": "10:23",
+				"stop": "princestreetcitycentre"
 			}
 		]
 	},
