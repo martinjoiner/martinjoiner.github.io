@@ -390,14 +390,12 @@ routes = {
 };
 
 
-/* Temporary leg
-
-*/
 
 // boats is a numeric array containing many objects, each representing a single boat
 boats = [
 	{
-		"boat_name": "Queen Mary",
+		"boat_name": "Brigantia",
+		"route": "west",
 		"schedule": [
 			{
 				"time": "9:00",
@@ -420,5 +418,41 @@ boats = [
 				"stop": "arnolfini"
 			}
 		]
+	},
+	{
+		"boat_name": "Matilda",
+		"route": "west",
+		"schedule": [
+			{
+				"time": "10:00",
+				"stop": "mardyke"
+			},
+			{
+				"time": "10:20",
+				"stop": "cumberland"
+			},
+			{
+				"time": "10:30",
+				"stop": "cottage"
+			},
+			{
+				"time": "10:40",
+				"stop": "ssgreatbritain"
+			},
+			{
+				"time": "10:50",
+				"stop": "arnolfini"
+			}
+		]
+	},
+	{
+		"boat_name": "Emily"
+	},
+	{
+		"boat_name": "Independence"
+	},
+	{
+		"boat_name": "Margaret"
 	}
 ];
+
