@@ -566,8 +566,32 @@ boats = [
 				"stop": "mardykepumphouse"
 			},
 			{
-				"time": "10:38",
+				"time": "10:36",
 				"stop": "pumphousenovascotia"
+			},
+			{
+				"time": "10:38",
+				"stop": "novascotiathecottage"
+			},
+			{
+				"time": "10:40",
+				"stop": "thecottagebristolmarina"
+			},
+			{
+				"time": "10:42",
+				"stop": "bristolmarinassgreatbritain"
+			},
+			{
+				"time": "10:45",
+				"stop": "ssgreatbritainwappingwharf"
+			},
+			{
+				"time": "10:45",
+				"stop": "whappingwharfprincestreet"
+			},
+			{
+				"time": "10:50",
+				"stop": "princestreetcitycentre"
 			}
 		]
 	},
