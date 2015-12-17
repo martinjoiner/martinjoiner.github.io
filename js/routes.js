@@ -246,7 +246,7 @@ routes = {
 				    {"lat":51.45147968503341,"lng":-2.581132650375366}
 				],
 				"stop_name": "Temple Meads"
-			}
+			},
 			"templemeadstemplebridge": {
 				"points": [
 				    {"lat":51.45149974292567,"lng":-2.5811755657196045},
