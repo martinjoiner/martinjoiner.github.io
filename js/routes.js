@@ -156,7 +156,7 @@ routes = {
 				],
 				"stop_name": "Bristol Marina"
 			},
-			"marinassgreatbritain": {
+			"bristolmarinassgreatbritain": {
 				"points": [
 				    {"lat":51.44871829775511,"lng":-2.6121926307678223},
 				    {"lat":51.44883196590259,"lng":-2.6121282577514644},
