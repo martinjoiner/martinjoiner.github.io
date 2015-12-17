@@ -10,7 +10,7 @@ routes = {
 		"color": "#bf0000",
 		"legs": {
 			// A leg is a series of points that lead up to a final point which is the location of the "stop". The stop has a name. 
-			"citycentercanonsmarsh": {
+			"citycentrecanonsmarsh": {
 				"points": [
 				    {"lat":51.45221513532007,"lng":-2.5977730751037593},
 				    {"lat":51.45201455914414,"lng":-2.597837448120117},
