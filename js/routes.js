@@ -632,6 +632,129 @@ boats = [
 				"stop": "princestreetcitycentre"
 			}
 		]
+	},{
+		"boat_name": "Matilda",
+		"route": "east",
+		"schedule": [
+			{
+				"time": "11:50",
+				"stop": "citycentreprincestreet"
+			},
+			{
+				"time": "11:55",
+				"stop": "princestreetbathurstbasin"
+			},
+			{
+				"time": "11:58",
+				"stop": "bathurstbasinredcliffbacks"
+			},
+			{
+				"time": "12:02",
+				"stop": "redcliffbackswelshback"
+			},
+			{
+				"time": "12:03",
+				"stop": "welshbackcastlepark"
+			},
+			{
+				"time": "12:05",
+				"stop": "castleparktemplebridge"
+			},
+			{
+				"time": "12:07",
+				"stop": "templebridgetemplemeads"
+			},
+			{
+				"time": "12:10",
+				"stop": "templemeadstemplebridge"
+			},
+			{
+				"time": "12:12",
+				"stop": "templebridgecastlepark"
+			},
+			{
+				"time": "12:15",
+				"stop": "castleparkwelshback"
+			},
+			{
+				"time": "12:17",
+				"stop": "welshbackredcliffbacks"
+			},
+			{
+				"time": "12:18",
+				"stop": "redcliffbacksbathurstbasin"
+			},
+			{
+				"time": "12:21",
+				"stop": "bathurstbasinprincestreet"
+			},
+			{
+				"time": "12:23",
+				"stop": "princestreetcitycentre"
+			}
+		]
+	},
+	{
+		"boat_name": "Matilda",
+		"route": "east",
+		"schedule": [
+			{
+				"time": "16:50",
+				"stop": "citycentreprincestreet"
+			},
+			{
+				"time": "16:55",
+				"stop": "princestreetbathurstbasin"
+			},
+			{
+				"time": "16:58",
+				"stop": "bathurstbasinredcliffbacks"
+			},
+			{
+				"time": "17:02",
+				"stop": "redcliffbackswelshback"
+			},
+			{
+				"time": "17:03",
+				"stop": "welshbackcastlepark"
+			},
+			{
+				"time": "17:05",
+				"stop": "castleparktemplebridge"
+			},
+			{
+				"time": "17:07",
+				"stop": "templebridgetemplemeads"
+			},
+			{
+				"time": "17:10",
+				"stop": "templemeadstemplebridge"
+			},
+			{
+				"time": "17:12",
+				"stop": "templebridgecastlepark"
+			},
+			{
+				"time": "17:15",
+				"stop": "castleparkwelshback"
+			},
+			{
+				"time": "17:17",
+				"stop": "welshbackredcliffbacks"
+			},
+			{
+				"time": "17:18",
+				"stop": "redcliffbacksbathurstbasin"
+			},
+			{
+				"time": "17:21",
+				"stop": "bathurstbasinprincestreet"
+			},
+			{
+				"time": "17:23",
+				"stop": "princestreetcitycentre"
+			}
+		]
 	},
 	{
 		"boat_name": "Emily"
