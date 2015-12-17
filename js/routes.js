@@ -536,13 +536,6 @@ routes = {
 				    {"lat":51.45220176360243,"lng":-2.597794532775879}
 				],
 				"stop_name": "City Centre"
-			},
-			"citycentrecitycentre": {
-				"points": [
-				    {"lat":51.45220176360243,"lng":-2.597794532775879}
-				    {"lat":51.45220176360242,"lng":-2.597794532775878}
-				],
-				"stop_name": "City Centre"
 			}
 		}
 	}
@@ -637,10 +630,6 @@ boats = [
 			{
 				"time": "10:23",
 				"stop": "princestreetcitycentre"
-			},
-			{
-				"time": "10:25",
-				"stop": "citycentrecitycentre"
 			}
 		]
 	},{
@@ -702,10 +691,6 @@ boats = [
 			{
 				"time": "12:23",
 				"stop": "princestreetcitycentre"
-			},
-			{
-				"time": "12:25",
-				"stop": "citycentrecitycentre"
 			}
 		]
 	},
@@ -768,10 +753,6 @@ boats = [
 			{
 				"time": "17:23",
 				"stop": "princestreetcitycentre"
-			},
-			{
-				"time": "17:25",
-				"stop": "citycentrecitycentre"
 			}
 		]
 	},
