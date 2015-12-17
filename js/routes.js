@@ -414,7 +414,7 @@ routes = {
 				],
 				"stop_name": "Temple Bridge"
 			},
-			"templebridgecastle": {
+			"templebridgecastlepark": {
 				"points": [
 				    {"lat":51.45264302821686,"lng":-2.5840401649475098},
 				    {"lat":51.45270320033381,"lng":-2.5840401649475098},
@@ -539,7 +539,6 @@ routes = {
 			},
 			"citycentrecitycentre": {
 				"points": [
-				    {"lat":51.45220176360243,"lng":-2.597794532775879}
 				    {"lat":51.45220176360243,"lng":-2.597794532775879}
 				],
 				"stop_name": "City Centre"
