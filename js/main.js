@@ -133,11 +133,23 @@ function tick(){
 }
 
 function incMinute(){
-    if( minute < 1440 ){
-        minute = minute + timescale;
+
+    if( timescale > 0 ){
+        // We are going up
+        if( minute < 1440 ){
+            minute = minute + timescale;
+        } else {
+            minute = 0;
+        }
     } else {
-        minute = 0;
+        // We are going down
+        if( minute < 0  ){
+            minute = 1440;
+        } else {
+            minute = minute + timescale;
+        }
     }
+
     displayTime( Math.floor(minute / 60), minute % 60 );
 }
 
@@ -161,8 +173,10 @@ elemTimeSlider.addEventListener("input", function(){
 });
 
 elemTimeInput.addEventListener("keyup", function(){
-    if( this.value > 1000 ){
+    if( this.value > 24 ){
         elemTimeSlider.value = timescale = parseInt(this.value) = 1000;
+    } else if( this.value < -24 ){ 
+        elemTimeSlider.value = timescale = this.value = -24;
     } else {
         elemTimeSlider.value = timescale = parseInt(this.value);
     }
@@ -178,8 +192,6 @@ function displayTime( hour, minute ){
 
     var minuteHandDegrees = ( minute / 60 ) * 360;
     document.getElementById('minuteHand').style.transform = 'rotate( ' + minuteHandDegrees + 'deg )';
-
-
 
     var hourHandDegrees = ( ( ( hour * 60 ) + minute ) / 720 ) * 360;
     document.getElementById('hourHand').style.transform = 'rotate( ' + hourHandDegrees + 'deg )';
