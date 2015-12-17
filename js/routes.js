@@ -10,7 +10,7 @@ routes = {
 		"color": "#bf0000",
 		"legs": {
 			// A leg is a series of points that lead up to a final point which is the location of the "stop". The stop has a name. 
-			"citycentercanonsmarsh": {
+			"citycentrecanonsmarsh": {
 				"points": [
 				    {"lat":51.45221513532007,"lng":-2.5977730751037593},
 				    {"lat":51.45201455914414,"lng":-2.597837448120117},
@@ -573,27 +573,39 @@ boats = [
 	},
 	{
 		"boat_name": "Matilda",
-		"route": "west",
+		"route": "east",
 		"schedule": [
 			{
-				"time": "10:00",
-				"stop": "mardyke"
+				"time": "09:50",
+				"stop": "citycentreprincestreet"
 			},
 			{
-				"time": "10:20",
-				"stop": "cumberland"
+				"time": "09:55",
+				"stop": "princestreetbathurstbasin"
 			},
 			{
-				"time": "10:30",
-				"stop": "cottage"
+				"time": "09:58",
+				"stop": "bathurstbasinredcliffbacks"
 			},
 			{
-				"time": "10:40",
-				"stop": "ssgreatbritain"
+				"time": "10:02",
+				"stop": "redcliffbackswelshback"
 			},
 			{
-				"time": "10:50",
-				"stop": "prince street"
+				"time": "10:03",
+				"stop": "welshbackcastlepark"
+			},
+			{
+				"time": "10:05",
+				"stop": "castleparktemplebridge"
+			},
+			{
+				"time": "10:07",
+				"stop": "templebridgetemplemeads"
+			},
+			{
+				"time": "10:10",
+				"stop": "templemeadstemplebridge"
 			}
 		]
 	},
