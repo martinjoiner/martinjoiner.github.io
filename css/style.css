@@ -10,3 +10,80 @@ body {
 	bottom: 0; 
 	width: 100%; 
 }
+
+.timecontrols{
+	position: absolute; 
+	background: rgba(255,255,255,0.8);
+	top: 8px; 
+	right: 8px;
+	padding: 20px;
+}
+
+.clockface{
+	padding-left: 60px;
+	width: 60px;
+	padding-top: 60px;
+	height: 60px;
+	border: 2px solid #666;
+	border-radius: 50%;
+}
+
+#minuteHand,
+#hourHand{
+	position: absolute;
+	display: block;
+	height: 0;
+	width: 0;
+	
+}
+
+.centredisc{
+	position: absolute;
+	display: block;
+    width: 8px;
+    height: 8px;
+	background: #666;
+	border-radius: 50%;
+	margin: -4px 0 0 -4px;
+}
+
+#minuteHand{
+	-webkit-animation: spin 10s infinite linear;
+}
+
+#hourHand{
+	-webkit-animation: spin 120s infinite linear;
+}
+
+#minuteHand:after{
+	position: absolute;
+	display: block;
+	content: ' ';
+	background: #666;
+	height: 60px;
+	margin-top: -60px;
+	width: 4px;
+	margin-left: -2px;
+}
+
+#hourHand:after{
+	position: absolute;
+	display: block;
+	content: ' ';
+	background: #666;
+	height: 50px;
+	margin-top: -50px;
+	width: 8px;
+	margin-left: -4px;
+	border-radius: 4px;
+}
+
+@-webkit-keyframes  spin{
+	from {
+		transform: rotate( 0deg );
+	}
+	to {
+		transform: rotate( 360deg );
+	}
+		
+}

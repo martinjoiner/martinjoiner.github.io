@@ -120,3 +120,16 @@ function tick(){
     setTimeout(tick, 100);
 
 }
+
+
+
+
+// Clock --------------------------------------------------------------- //
+// --------------------------------------------------------------------- //
+
+var gameTime = new Date();
+
+// 1 = Realtime, 2 = Double speed, et cetera
+// 1000 means a day will take 1.44 minutes 
+var timescale = 1; 
+
