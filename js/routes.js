@@ -596,6 +596,156 @@ boats = [
 		]
 	},
 	{
+		"boat_name": "Brigantia",
+		"route": "west",
+		"schedule": [
+			{
+				"time": "12:20",
+				"stop": "citycentrecanonsmarsh"
+			},
+			{
+				"time": "12:25",
+				"stop": "canonsmarshharbourinlet"
+			},
+			{
+				"time": "12:30",
+				"stop": "harbourinletmardyke"
+			},
+			{
+				"time": "12:35",
+				"stop": "mardykepumphouse"
+			},
+			{
+				"time": "12:36",
+				"stop": "pumphousenovascotia"
+			},
+			{
+				"time": "12:38",
+				"stop": "novascotiathecottage"
+			},
+			{
+				"time": "12:40",
+				"stop": "thecottagebristolmarina"
+			},
+			{
+				"time": "12:42",
+				"stop": "bristolmarinassgreatbritain"
+			},
+			{
+				"time": "12:45",
+				"stop": "ssgreatbritainwappingwharf"
+			},
+			{
+				"time": "12:45",
+				"stop": "whappingwharfprincestreet"
+			},
+			{
+				"time": "12:50",
+				"stop": "princestreetcitycentre"
+			}
+		]
+	},
+	{
+		"boat_name": "Brigantia",
+		"route": "west",
+		"schedule": [
+			{
+				"time": "14:20",
+				"stop": "citycentrecanonsmarsh"
+			},
+			{
+				"time": "14:25",
+				"stop": "canonsmarshharbourinlet"
+			},
+			{
+				"time": "14:30",
+				"stop": "harbourinletmardyke"
+			},
+			{
+				"time": "14:35",
+				"stop": "mardykepumphouse"
+			},
+			{
+				"time": "14:36",
+				"stop": "pumphousenovascotia"
+			},
+			{
+				"time": "14:38",
+				"stop": "novascotiathecottage"
+			},
+			{
+				"time": "14:40",
+				"stop": "thecottagebristolmarina"
+			},
+			{
+				"time": "14:42",
+				"stop": "bristolmarinassgreatbritain"
+			},
+			{
+				"time": "14:45",
+				"stop": "ssgreatbritainwappingwharf"
+			},
+			{
+				"time": "14:45",
+				"stop": "whappingwharfprincestreet"
+			},
+			{
+				"time": "14:50",
+				"stop": "princestreetcitycentre"
+			}
+		]
+	},
+	{
+		"boat_name": "Brigantia",
+		"route": "west",
+		"schedule": [
+			{
+				"time": "16:20",
+				"stop": "citycentrecanonsmarsh"
+			},
+			{
+				"time": "16:25",
+				"stop": "canonsmarshharbourinlet"
+			},
+			{
+				"time": "16:30",
+				"stop": "harbourinletmardyke"
+			},
+			{
+				"time": "16:35",
+				"stop": "mardykepumphouse"
+			},
+			{
+				"time": "16:36",
+				"stop": "pumphousenovascotia"
+			},
+			{
+				"time": "16:38",
+				"stop": "novascotiathecottage"
+			},
+			{
+				"time": "16:40",
+				"stop": "thecottagebristolmarina"
+			},
+			{
+				"time": "16:42",
+				"stop": "bristolmarinassgreatbritain"
+			},
+			{
+				"time": "16:45",
+				"stop": "ssgreatbritainwappingwharf"
+			},
+			{
+				"time": "16:45",
+				"stop": "whappingwharfprincestreet"
+			},
+			{
+				"time": "16:50",
+				"stop": "princestreetcitycentre"
+			}
+		]
+	},
+	{
 		"boat_name": "Matilda",
 		"route": "east",
 		"schedule": [
