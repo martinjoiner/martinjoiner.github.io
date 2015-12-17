@@ -197,13 +197,16 @@ function numAs2Digits( num ){
 
 
 function renderBoatLocations(){
-    var boat;
+    var boat,
+        currentLeg;
     // Loop over boats querying where they should be
     for( var i = 0, iLimit = boats.length; i < iLimit; i++ ){
         boat = boats[i];
         if( typeof boat.schedule !== 'undefined' ){
             currentLeg = whereShouldYouBeNow( boat.schedule );
-            boat.marker.setLatLng( routes[boat.route].legs[currentLeg.stop].points[0].latlng );
+            if( typeof routes[boat.route].legs[currentLeg.stop] !== 'undefined' ){
+                boat.marker.setLatLng( routes[boat.route].legs[currentLeg.stop].points[0].latlng );
+            }
         }
     }
 }
