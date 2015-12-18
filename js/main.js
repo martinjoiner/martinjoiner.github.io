@@ -97,7 +97,8 @@ for( var i = 0, iLimit = boats.length; i < iLimit; i++ ){
     if( typeof boat.schedule !== 'undefined' ){
         boat.marker = L.marker([51.4505481,-2.6002987], {
         	icon: L.mapbox.marker.icon({
-        		'marker-color': '#f86767'
+        		'marker-color': '#f86767',
+        		'marker-symbol': 'ferry'
         	})
         }).addTo(map);
     }
