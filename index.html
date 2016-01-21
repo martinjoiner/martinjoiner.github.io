@@ -20,7 +20,12 @@
             <i id="minuteHand"></i>
             <i id="hourHand"></i>
             <i class="centredisc"></i>
-            <span id="numerictime">00:00</span>
+            <div id="numerictime">
+                <span id="time_hour">00</span>
+                <span>:</span>
+                <span id="time_minute">00</span>
+                <small>:<span id="time_second">00</span></small>
+            </div>
         </div>
         <input type="range" id="timeSlider" min="-24" max="24" value="1">
         <div class="timescale">

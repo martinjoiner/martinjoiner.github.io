@@ -138,10 +138,8 @@ function Boat( boatData ){
                 'marker-symbol': 'ferry',
                 'marker-size': 'large'
                 
-            }),
-            'title': this.name
-        }).addTo(map);
-
+            })
+        }).bindPopup(this.name).addTo(map);
         
     });
 
@@ -153,10 +151,12 @@ function Boat( boatData ){
         for( var i = 0, iLimit = this.timedPositions.length; i < iLimit; i++ ){
             timedPosition = this.timedPositions[i];
             if( timedPosition.time_seconds > window.currentSecond ){
-                this._marker.setLatLng( timedPosition.latlng )
+                this._marker.setLatLng( timedPosition.latlng ).setOpacity(1);
                 return true;
             }
         }
+        // The boat is not scheduled to be out, hide the marker
+        this._marker.setOpacity(0);
         return false;
     });
 
@@ -309,7 +309,7 @@ function tick(){
 
     renderBoatLocations();
 
-    setTimeout(tick, 100);
+    setTimeout(tick, 200);
 
 }
 tick();
@@ -336,7 +336,9 @@ function incMinute(){
 
     window.currentMinute = Math.round( window.currentSecond / 60 );
 
-    displayTime( Math.floor(window.currentMinute / 60 ), window.currentMinute % 60, window.currentSecond % 60 );
+    displayTime( Math.floor(    window.currentMinute / 60 ), 
+                                window.currentMinute % 60, 
+                                Math.floor( window.currentSecond % 60 ) );
 }
 
 
@@ -367,7 +369,9 @@ elemTimeInput.addEventListener("keyup", function(){
 
 function displayTime( hour, minute, second ){
 
-    document.getElementById('numerictime').textContent = numAs2Digits(hour) + ':' + numAs2Digits(minute);
+    document.getElementById('time_hour').textContent = numAs2Digits(hour);
+    document.getElementById('time_minute').textContent = numAs2Digits(minute);
+    document.getElementById('time_second').textContent = numAs2Digits(second);
 
     if( hour > 12 ){
         hour = hour - 12;
