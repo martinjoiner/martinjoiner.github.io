@@ -36,6 +36,10 @@ boats = [
 				"route": "east",
 			},
 			{
+				"start_time": "11:10",
+				"route": "east",
+			},
+			{
 				"start_time": "11:50",
 				"route": "east",
 			},
@@ -44,7 +48,23 @@ boats = [
 				"route": "east",
 			},
 			{
+				"start_time": "13:30",
+				"route": "east",
+			},
+			{
+				"start_time": "14:10",
+				"route": "east",
+			},
+			{
+				"start_time": "14:50",
+				"route": "east",
+			},
+			{
 				"start_time": "15:30",
+				"route": "east",
+			},
+			{
+				"start_time": "16:10",
 				"route": "east",
 			},
 			{
