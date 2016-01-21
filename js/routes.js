@@ -32,7 +32,8 @@ routes = {
 				    {"lat":51.44832380022442,"lng":-2.5990819931030273},
 				    {"lat":51.44832380022442,"lng":-2.599360942840576}
 				],
-				"stop_name": "Canons Marsh"
+				"stop_name": "Canons Marsh",
+				"travel_time_mins": 4 // TODO: Check this time
 			},
 			"canonsmarshharbourinlet": {
 				"points": [
@@ -63,7 +64,8 @@ routes = {
 				    {"lat":51.449139537118164,"lng":-2.6060879230499268},
 				    {"lat":51.44922645904271,"lng":-2.6060342788696285}
 				],
-				"stop_name": "Harbour Inlet"
+				"stop_name": "Harbour Inlet",
+				"travel_time_mins": 5
 			},
 			"harbourinletmardyke": {
 				"points": [
@@ -85,7 +87,8 @@ routes = {
 				    {"lat":51.44925320421698,"lng":-2.6126217842102046},
 				    {"lat":51.449206400151766,"lng":-2.612943649291992}
 				],
-				"stop_name": "Mardyke"
+				"stop_name": "Mardyke",
+				"travel_time_mins": 5
 			},
 			"mardykepumphouse": {
 				"points": [
@@ -108,7 +111,8 @@ routes = {
 				    {"lat":51.448123206952474,"lng":-2.6170527935028076},
 				    {"lat":51.448096461116315,"lng":-2.617095708847046}
 				],
-				"stop_name": "Pumphouse"
+				"stop_name": "Pumphouse",
+				"travel_time_mins": 5
 			},
 			"pumphousenovascotia": {
 				"points": [
@@ -124,7 +128,8 @@ routes = {
 				    {"lat":51.44722721291201,"lng":-2.6175248622894287},
 				    {"lat":51.44720715314272,"lng":-2.6176750659942627}
 				],
-				"stop_name": "Nova Scotia"
+				"stop_name": "Nova Scotia",
+				"travel_time_mins": 1
 			},
 			"novascotiathecottage": {
 				"points": [
@@ -139,7 +144,8 @@ routes = {
 				    {"lat":51.446779209298505,"lng":-2.6168328523635864},
 				    {"lat":51.44684273246636,"lng":-2.6166772842407227}
 				],
-				"stop_name": "The Cottage"
+				"stop_name": "The Cottage",
+				"travel_time_mins": 2
 			},
 			"thecottagebristolmarina": {
 				"points": [
@@ -154,7 +160,8 @@ routes = {
 				    {"lat":51.44868486589318,"lng":-2.61250376701355},
 				    {"lat":51.44871161138467,"lng":-2.6122140884399414}
 				],
-				"stop_name": "Bristol Marina"
+				"stop_name": "Bristol Marina",
+				"travel_time_mins": 2
 			},
 			"bristolmarinassgreatbritain": {
 				"points": [
@@ -176,7 +183,8 @@ routes = {
 				    {"lat":51.44906598766818,"lng":-2.607235908508301},
 				    {"lat":51.448999124428966,"lng":-2.607150077819824}
 				],
-				"stop_name": "SS Great Britain"
+				"stop_name": "SS Great Britain",
+				"travel_time_mins": 2
 			},
 			"ssgreatbritainwappingwharf": {
 				"points": [
@@ -195,7 +203,8 @@ routes = {
 				    {"lat":51.44736094448207,"lng":-2.602365016937256},
 				    {"lat":51.447300765324016,"lng":-2.6022684574127197}
 				],
-				"stop_name": "Wapping Wharf"
+				"stop_name": "Wapping Wharf",
+				"travel_time_mins": 3
 			},
 			"wappingwharfprincestreet": {
 				"points": [
@@ -212,7 +221,8 @@ routes = {
 				    {"lat":51.44869823864088,"lng":-2.5970005989074707},
 				    {"lat":51.44878516140555,"lng":-2.5969254970550537}
 				],
-				"stop_name": "Prince Street"
+				"stop_name": "Prince Street",
+				"travel_time_mins": 3
 			},
 			"princestreetcitycentre": {
 				"points": [
@@ -235,7 +245,8 @@ routes = {
 				    {"lat":51.45208141796737,"lng":-2.597837448120117},
 				    {"lat":51.45220176360243,"lng":-2.597794532775879}
 				],
-				"stop_name": "City Centre"
+				"stop_name": "City Centre",
+				"travel_time_mins": 2
 			}
 		}
 	},
@@ -263,7 +274,8 @@ routes = {
 				    {"lat":51.44871161138467,"lng":-2.597215175628662},
 				    {"lat":51.44879184776521,"lng":-2.5969576835632324}
 				],
-				"stop_name": "Prince Street"
+				"stop_name": "Prince Street",
+				"travel_time_mins": 2 // TODO: check this
 			},
 			"princestreetbathurstbasin": {
 				"points": [
@@ -281,7 +293,8 @@ routes = {
 				    {"lat":51.44841072370191,"lng":-2.5941896438598633},
 				    {"lat":51.44835723235074,"lng":-2.5940930843353267}
 				],
-				"stop_name": "Bathurst Basin"
+				"stop_name": "Bathurst Basin",
+				"travel_time_mins": 5
 			},
 			"bathurstbasinredcliffbacks": {
 				"points": [
@@ -310,7 +323,8 @@ routes = {
 				    {"lat":51.45225525044954,"lng":-2.5918078422546387},
 				    {"lat":51.45222850703381,"lng":-2.5916790962219234}
 				],
-				"stop_name": "Redcliff Backs"
+				"stop_name": "Redcliff Backs",
+				"travel_time_mins": 3
 			},
 			"redcliffbackswelshback": {
 				"points": [
@@ -321,7 +335,8 @@ routes = {
 				    {"lat":51.452542741179016,"lng":-2.5920653343200684},
 				    {"lat":51.45264971401155,"lng":-2.5922799110412598}
 				],
-				"stop_name": "Welsh Back"
+				"stop_name": "Welsh Back",
+				"travel_time_mins": 4
 			},
 			"welshbackcastlepark": {
 				"points": [
@@ -344,7 +359,8 @@ routes = {
 				    {"lat":51.454909456521705,"lng":-2.5888359546661377},
 				    {"lat":51.4549829965583,"lng":-2.5887930393218994}
 				],
-				"stop_name": "Castle Park"
+				"stop_name": "Castle Park",
+				"travel_time_mins": 5
 			},
 			"castleparktemplebridge": {
 				"points": [
@@ -366,7 +382,8 @@ routes = {
 				    {"lat":51.45270320033381,"lng":-2.5840401649475098},
 				    {"lat":51.45262965662454,"lng":-2.58402943611145}
 				],
-				"stop_name": "Temple Bridge"
+				"stop_name": "Temple Bridge",
+				"travel_time_mins": 2
 			},
 			"templebridgetemplemeads": {
 				"points": [
@@ -397,7 +414,8 @@ routes = {
 				    {"lat":51.45145962713236,"lng":-2.5810253620147705},
 				    {"lat":51.45147968503341,"lng":-2.581132650375366}
 				],
-				"stop_name": "Temple Meads"
+				"stop_name": "Temple Meads",
+				"travel_time_mins": 2
 			},
 			"templemeadstemplebridge": {
 				"points": [
@@ -412,7 +430,8 @@ routes = {
 				    {"lat":51.45256279860421,"lng":-2.583739757537842},
 				    {"lat":51.452602913428144,"lng":-2.5839436054229736}
 				],
-				"stop_name": "Temple Bridge"
+				"stop_name": "Temple Bridge",
+				"travel_time_mins": 3
 			},
 			"templebridgecastlepark": {
 				"points": [
@@ -436,7 +455,8 @@ routes = {
 				    {"lat":51.454976311105305,"lng":-2.5886964797973633},
 				    {"lat":51.45498968201027,"lng":-2.5887930393218994}
 				],
-				"stop_name": "Castle Park"
+				"stop_name": "Castle Park",
+				"travel_time_mins": 2
 			},
 			"castleparkwelshback": {
 				"points": [
@@ -454,7 +474,8 @@ routes = {
 				    {"lat":51.45274331503441,"lng":-2.5922369956970215},
 				    {"lat":51.45264971401155,"lng":-2.5922584533691406}
 				],
-				"stop_name": "Welsh Back"
+				"stop_name": "Welsh Back",
+				"travel_time_mins": 3
 			},
 			"welshbackredcliffbacks": {
 				"points": [
@@ -464,7 +485,8 @@ routes = {
 				    {"lat":51.452241878743635,"lng":-2.5917434692382812},
 				    {"lat":51.45214827669268,"lng":-2.5916576385498042}
 				],
-				"stop_name": "Redcliff Backs"
+				"stop_name": "Redcliff Backs",
+				"travel_time_mins": 2
 			},
 			"redcliffbacksbathurstbasin": {
 				"points": [
@@ -494,7 +516,8 @@ routes = {
 				    {"lat":51.44840403728644,"lng":-2.5938892364501953},
 				    {"lat":51.44836391877306,"lng":-2.5940394401550293}
 				],
-				"stop_name": "Bathurst Basin"
+				"stop_name": "Bathurst Basin",
+				"travel_time_mins": 1
 			},
 			"bathurstbasinprincestreet": {
 				"points": [
@@ -512,7 +535,8 @@ routes = {
 					{"lat":51.44861800209584,"lng":-2.5970005989074707},
 					{"lat":51.44871161138467,"lng":-2.5969576835632324}
 				],
-				"stop_name": "Prince Street"
+				"stop_name": "Prince Street",
+				"travel_time_mins": 3
 			},
 			"princestreetcitycentre": {
 				"points": [
@@ -535,596 +559,10 @@ routes = {
 				    {"lat":51.45208141796737,"lng":-2.597837448120117},
 				    {"lat":51.45220176360243,"lng":-2.597794532775879}
 				],
-				"stop_name": "City Centre"
+				"stop_name": "City Centre",
+				"travel_time_mins": 2
 			}
 		}
 	}
 };
-
-
-
-// boats is a numeric array containing many objects, each representing a single boat
-boats = [
-	{
-		"boat_name": "Brigantia",
-		"route": "west",
-		"schedule": [
-			{
-				"time": "10:20",
-				"stop": "citycentrecanonsmarsh"
-			},
-			{
-				"time": "10:25",
-				"stop": "canonsmarshharbourinlet"
-			},
-			{
-				"time": "10:30",
-				"stop": "harbourinletmardyke"
-			},
-			{
-				"time": "10:35",
-				"stop": "mardykepumphouse"
-			},
-			{
-				"time": "10:36",
-				"stop": "pumphousenovascotia"
-			},
-			{
-				"time": "10:38",
-				"stop": "novascotiathecottage"
-			},
-			{
-				"time": "10:40",
-				"stop": "thecottagebristolmarina"
-			},
-			{
-				"time": "10:42",
-				"stop": "bristolmarinassgreatbritain"
-			},
-			{
-				"time": "10:45",
-				"stop": "ssgreatbritainwappingwharf"
-			},
-			{
-				"time": "10:48",
-				"stop": "wappingwharfprincestreet"
-			},
-			{
-				"time": "10:50",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Brigantia",
-		"route": "west",
-		"schedule": [
-			{
-				"time": "12:20",
-				"stop": "citycentrecanonsmarsh"
-			},
-			{
-				"time": "12:25",
-				"stop": "canonsmarshharbourinlet"
-			},
-			{
-				"time": "12:30",
-				"stop": "harbourinletmardyke"
-			},
-			{
-				"time": "12:35",
-				"stop": "mardykepumphouse"
-			},
-			{
-				"time": "12:36",
-				"stop": "pumphousenovascotia"
-			},
-			{
-				"time": "12:38",
-				"stop": "novascotiathecottage"
-			},
-			{
-				"time": "12:40",
-				"stop": "thecottagebristolmarina"
-			},
-			{
-				"time": "12:42",
-				"stop": "bristolmarinassgreatbritain"
-			},
-			{
-				"time": "12:45",
-				"stop": "ssgreatbritainwappingwharf"
-			},
-			{
-				"time": "12:48",
-				"stop": "wappingwharfprincestreet"
-			},
-			{
-				"time": "12:50",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Brigantia",
-		"route": "west",
-		"schedule": [
-			{
-				"time": "14:20",
-				"stop": "citycentrecanonsmarsh"
-			},
-			{
-				"time": "14:25",
-				"stop": "canonsmarshharbourinlet"
-			},
-			{
-				"time": "14:30",
-				"stop": "harbourinletmardyke"
-			},
-			{
-				"time": "14:35",
-				"stop": "mardykepumphouse"
-			},
-			{
-				"time": "14:36",
-				"stop": "pumphousenovascotia"
-			},
-			{
-				"time": "14:38",
-				"stop": "novascotiathecottage"
-			},
-			{
-				"time": "14:40",
-				"stop": "thecottagebristolmarina"
-			},
-			{
-				"time": "14:42",
-				"stop": "bristolmarinassgreatbritain"
-			},
-			{
-				"time": "14:45",
-				"stop": "ssgreatbritainwappingwharf"
-			},
-			{
-				"time": "14:48",
-				"stop": "wappingwharfprincestreet"
-			},
-			{
-				"time": "14:50",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Brigantia",
-		"route": "west",
-		"schedule": [
-			{
-				"time": "16:20",
-				"stop": "citycentrecanonsmarsh"
-			},
-			{
-				"time": "16:25",
-				"stop": "canonsmarshharbourinlet"
-			},
-			{
-				"time": "16:30",
-				"stop": "harbourinletmardyke"
-			},
-			{
-				"time": "16:35",
-				"stop": "mardykepumphouse"
-			},
-			{
-				"time": "16:36",
-				"stop": "pumphousenovascotia"
-			},
-			{
-				"time": "16:38",
-				"stop": "novascotiathecottage"
-			},
-			{
-				"time": "16:40",
-				"stop": "thecottagebristolmarina"
-			},
-			{
-				"time": "16:42",
-				"stop": "bristolmarinassgreatbritain"
-			},
-			{
-				"time": "16:45",
-				"stop": "ssgreatbritainwappingwharf"
-			},
-			{
-				"time": "16:48",
-				"stop": "wappingwharfprincestreet"
-			},
-			{
-				"time": "16:50",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Matilda",
-		"route": "east",
-		"schedule": [
-			{
-				"time": "09:50",
-				"stop": "citycentreprincestreet"
-			},
-			{
-				"time": "09:55",
-				"stop": "princestreetbathurstbasin"
-			},
-			{
-				"time": "09:58",
-				"stop": "bathurstbasinredcliffbacks"
-			},
-			{
-				"time": "10:02",
-				"stop": "redcliffbackswelshback"
-			},
-			{
-				"time": "10:03",
-				"stop": "welshbackcastlepark"
-			},
-			{
-				"time": "10:05",
-				"stop": "castleparktemplebridge"
-			},
-			{
-				"time": "10:07",
-				"stop": "templebridgetemplemeads"
-			},
-			{
-				"time": "10:10",
-				"stop": "templemeadstemplebridge"
-			},
-			{
-				"time": "10:12",
-				"stop": "templebridgecastlepark"
-			},
-			{
-				"time": "10:15",
-				"stop": "castleparkwelshback"
-			},
-			{
-				"time": "10:17",
-				"stop": "welshbackredcliffbacks"
-			},
-			{
-				"time": "10:18",
-				"stop": "redcliffbacksbathurstbasin"
-			},
-			{
-				"time": "10:21",
-				"stop": "bathurstbasinprincestreet"
-			},
-			{
-				"time": "10:23",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Matilda",
-		"route": "east",
-		"schedule": [
-			{
-				"time": "10:30",
-				"stop": "citycentreprincestreet"
-			},
-			{
-				"time": "10:35",
-				"stop": "princestreetbathurstbasin"
-			},
-			{
-				"time": "10:38",
-				"stop": "bathurstbasinredcliffbacks"
-			},
-			{
-				"time": "10:42",
-				"stop": "redcliffbackswelshback"
-			},
-			{
-				"time": "10:43",
-				"stop": "welshbackcastlepark"
-			},
-			{
-				"time": "10:45",
-				"stop": "castleparktemplebridge"
-			},
-			{
-				"time": "10:47",
-				"stop": "templebridgetemplemeads"
-			},
-			{
-				"time": "10:50",
-				"stop": "templemeadstemplebridge"
-			},
-			{
-				"time": "10:52",
-				"stop": "templebridgecastlepark"
-			},
-			{
-				"time": "10:55",
-				"stop": "castleparkwelshback"
-			},
-			{
-				"time": "10:57",
-				"stop": "welshbackredcliffbacks"
-			},
-			{
-				"time": "10:58",
-				"stop": "redcliffbacksbathurstbasin"
-			},
-			{
-				"time": "11:01",
-				"stop": "bathurstbasinprincestreet"
-			},
-			{
-				"time": "11:03",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Matilda",
-		"route": "east",
-		"schedule": [
-			{
-				"time": "11:50",
-				"stop": "citycentreprincestreet"
-			},
-			{
-				"time": "11:55",
-				"stop": "princestreetbathurstbasin"
-			},
-			{
-				"time": "11:58",
-				"stop": "bathurstbasinredcliffbacks"
-			},
-			{
-				"time": "12:02",
-				"stop": "redcliffbackswelshback"
-			},
-			{
-				"time": "12:03",
-				"stop": "welshbackcastlepark"
-			},
-			{
-				"time": "12:05",
-				"stop": "castleparktemplebridge"
-			},
-			{
-				"time": "12:07",
-				"stop": "templebridgetemplemeads"
-			},
-			{
-				"time": "12:10",
-				"stop": "templemeadstemplebridge"
-			},
-			{
-				"time": "12:12",
-				"stop": "templebridgecastlepark"
-			},
-			{
-				"time": "12:15",
-				"stop": "castleparkwelshback"
-			},
-			{
-				"time": "12:17",
-				"stop": "welshbackredcliffbacks"
-			},
-			{
-				"time": "12:18",
-				"stop": "redcliffbacksbathurstbasin"
-			},
-			{
-				"time": "12:21",
-				"stop": "bathurstbasinprincestreet"
-			},
-			{
-				"time": "12:23",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-		{
-		"boat_name": "Matilda",
-		"route": "east",
-		"schedule": [
-			{
-				"time": "12:30",
-				"stop": "citycentreprincestreet"
-			},
-			{
-				"time": "12:35",
-				"stop": "princestreetbathurstbasin"
-			},
-			{
-				"time": "12:38",
-				"stop": "bathurstbasinredcliffbacks"
-			},
-			{
-				"time": "12:42",
-				"stop": "redcliffbackswelshback"
-			},
-			{
-				"time": "12:43",
-				"stop": "welshbackcastlepark"
-			},
-			{
-				"time": "12:45",
-				"stop": "castleparktemplebridge"
-			},
-			{
-				"time": "12:47",
-				"stop": "templebridgetemplemeads"
-			},
-			{
-				"time": "12:50",
-				"stop": "templemeadstemplebridge"
-			},
-			{
-				"time": "12:52",
-				"stop": "templebridgecastlepark"
-			},
-			{
-				"time": "12:55",
-				"stop": "castleparkwelshback"
-			},
-			{
-				"time": "12:57",
-				"stop": "welshbackredcliffbacks"
-			},
-			{
-				"time": "12:58",
-				"stop": "redcliffbacksbathurstbasin"
-			},
-			{
-				"time": "13:01",
-				"stop": "bathurstbasinprincestreet"
-			},
-			{
-				"time": "13:03",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Matilda",
-		"route": "east",
-		"schedule": [
-			{
-				"time": "15:30",
-				"stop": "citycentreprincestreet"
-			},
-			{
-				"time": "15:35",
-				"stop": "princestreetbathurstbasin"
-			},
-			{
-				"time": "15:38",
-				"stop": "bathurstbasinredcliffbacks"
-			},
-			{
-				"time": "15:42",
-				"stop": "redcliffbackswelshback"
-			},
-			{
-				"time": "15:43",
-				"stop": "welshbackcastlepark"
-			},
-			{
-				"time": "15:45",
-				"stop": "castleparktemplebridge"
-			},
-			{
-				"time": "15:47",
-				"stop": "templebridgetemplemeads"
-			},
-			{
-				"time": "15:50",
-				"stop": "templemeadstemplebridge"
-			},
-			{
-				"time": "15:52",
-				"stop": "templebridgecastlepark"
-			},
-			{
-				"time": "15:55",
-				"stop": "castleparkwelshback"
-			},
-			{
-				"time": "15:57",
-				"stop": "welshbackredcliffbacks"
-			},
-			{
-				"time": "15:58",
-				"stop": "redcliffbacksbathurstbasin"
-			},
-			{
-				"time": "16:01",
-				"stop": "bathurstbasinprincestreet"
-			},
-			{
-				"time": "16:03",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Matilda",
-		"route": "east",
-		"schedule": [
-			{
-				"time": "16:50",
-				"stop": "citycentreprincestreet"
-			},
-			{
-				"time": "16:55",
-				"stop": "princestreetbathurstbasin"
-			},
-			{
-				"time": "16:58",
-				"stop": "bathurstbasinredcliffbacks"
-			},
-			{
-				"time": "17:02",
-				"stop": "redcliffbackswelshback"
-			},
-			{
-				"time": "17:03",
-				"stop": "welshbackcastlepark"
-			},
-			{
-				"time": "17:05",
-				"stop": "castleparktemplebridge"
-			},
-			{
-				"time": "17:07",
-				"stop": "templebridgetemplemeads"
-			},
-			{
-				"time": "17:10",
-				"stop": "templemeadstemplebridge"
-			},
-			{
-				"time": "17:12",
-				"stop": "templebridgecastlepark"
-			},
-			{
-				"time": "17:15",
-				"stop": "castleparkwelshback"
-			},
-			{
-				"time": "17:17",
-				"stop": "welshbackredcliffbacks"
-			},
-			{
-				"time": "17:18",
-				"stop": "redcliffbacksbathurstbasin"
-			},
-			{
-				"time": "17:21",
-				"stop": "bathurstbasinprincestreet"
-			},
-			{
-				"time": "17:23",
-				"stop": "princestreetcitycentre"
-			}
-		]
-	},
-	{
-		"boat_name": "Emily"
-	},
-	{
-		"boat_name": "Independence"
-	},
-	{
-		"boat_name": "Margaret"
-	}
-];
 
