@@ -373,6 +373,8 @@ function displayTime( hour, minute, second ){
     document.getElementById('time_minute').textContent = numAs2Digits(minute);
     document.getElementById('time_second').textContent = numAs2Digits(second);
 
+    setCurrentClockJump( hour );
+
     if( hour > 12 ){
         hour = hour - 12;
     }
@@ -382,7 +384,41 @@ function displayTime( hour, minute, second ){
 
     var hourHandDegrees = ( ( ( hour * 60 ) + minute ) / 720 ) * 360;
     document.getElementById('hourHand').style.transform = 'rotate( ' + hourHandDegrees + 'deg )';
+
 }
+
+
+
+/**
+ * Highlights which hour block on the outer edge of the clock is highlighted
+ * @hour number representing the hour
+ */
+function setCurrentClockJump( hour ){
+    var newClass;
+    for( var i = 9; i < 18; i++ ){
+        if( i === hour ){
+            newClass = 'current';
+        } else {
+            newClass = '';
+        }
+        document.getElementById('hourOf' + i).setAttribute('class',newClass);
+    }
+}
+
+
+/**
+ * Initialise the clockJump interface by assigning click event listeners
+ */
+(function(){
+    for( var i = 9; i < 18; i++ ){
+        document.getElementById('hourOf' + i).addEventListener('click', function(){
+            var thisHour = parseInt( this.id.replace(/^hourOf/,'') );
+            window.currentSecond = thisHour * 60 * 60;
+        });
+    }
+})();
+
+
 
 function numAs2Digits( num ){
     var strNum = num.toString();
