@@ -24,6 +24,7 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 function Route( routeData ){
 
     this.total_travel_time_mins = routeData.total_travel_time_mins;
+    this.total_distance = routeData.total_distance;
     this.name = routeData.route_name;
     this.color = routeData.color;
     this.legs = routeData.legs;
@@ -110,6 +111,7 @@ function Leg( legData ){
 }
 
 
+
 /**
  * Point class
  * @param {object} Containing lat, lng, distance_to_next
@@ -124,9 +126,6 @@ function Point( pointData ){
 
     this.setSecondsToNext = (function( leg_total_distance, leg_travel_time_seconds){
 
-        if( typeof leg_total_distance === 'undefined' ){
-            leg_total_distance = 12;
-        }
         this.seconds_to_next = ( this.distance_to_next / leg_total_distance ) * leg_travel_time_seconds;
     });
 
@@ -142,7 +141,6 @@ function Boat( boatData ){
 
     this.name = boatData.boat_name;
     this.color = boatData.color;
-    this._marker;
     this.schedule = boatData.schedule;
 
     this.timedPositions = [];
@@ -155,28 +153,35 @@ function Boat( boatData ){
         }, this);
     }
 
-    // Setter method to create MapBox marker object
-    this.setMarker = (function(){
-
-        this._marker = L.marker([51.4505481,-2.6002987], {
-            icon: L.mapbox.marker.icon({
-                'marker-color': this.color,
-                'marker-symbol': 'ferry',
-                'marker-size': 'large'
-                
-            })
-        }).bindPopup(this.name).addTo(map);
-        
-    });
+    // Create MapBox marker object
+    this._marker = L.marker([51.4505481,-2.6002987], {
+        icon: L.mapbox.marker.icon({
+            'marker-color': this.color,
+            'marker-symbol': 'ferry',
+            'marker-size': 'large'
+            
+        })
+    }).bindPopup(this.name).addTo(map);
+    
 
 
+    // Updates the marker on the map
     this.whereShouldYouBeNow = (function(){
+
+        if( typeof this.schedule === 'undefined' ){
+            return false;
+        } 
         var stop,
+            timedPosition,
             previousStopTime,
             returnStop;
+        // Iterate over all the timedPositions that we know this boat needs to be in
         for( var i = 0, iLimit = this.timedPositions.length; i < iLimit; i++ ){
             timedPosition = this.timedPositions[i];
-            if( timedPosition.time_seconds > window.currentSecond ){
+
+            // Return the first timedPosition that's in the future 
+            // TODO: This needs to be a lot more intelligent and should return waiting times and if it should actually be some distance between this point and the next
+            if( timedPosition.time_seconds > window.currentSecond && ( timedPosition.time_seconds - window.currentSecond < 240 ) ){
                 this._marker.setLatLng( timedPosition.latlng ).setOpacity(1);
                 return true;
             }
@@ -188,10 +193,13 @@ function Boat( boatData ){
 
 }
 
+// End of class definitions
 
 
-// --------------------------------------------------------------------- //
-// --------------------------------------------------------------------- //
+
+
+// ----------------------------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------------------------- //
 
 
 /**
@@ -215,37 +223,49 @@ function Boat( boatData ){
 })();
 
 
-// Give a route a total_travel_time_mins value
+/**
+ * Give a route a total_travel_time_mins value
+ *
+ */
 function processRoute( route ){
-    route.total_travel_time_mins = processLegs( route.legs );
+
+    var keys = Object.keys( route.legs ),
+        key,
+        totalTravelTimeMins = 0,
+        total_distance = 0;
+
+    // Iterate over the array of legs, converting each to an instances of Leg class
+    for( var i = 0, iLimit = keys.length; i < iLimit; i++ ){
+        key = keys[i];
+        processLeg(route.legs[key]);
+
+        route.legs[key] = new Leg( route.legs[key] );
+
+        totalTravelTimeMins += route.legs[key].travel_time_mins;
+        total_distance += route.legs[key].total_distance;
+    }
+
+
+    route.total_travel_time_mins = totalTravelTimeMins;
+    route.total_distance = total_distance;
     
     return new Route( route );
 }
 
 
-// Iterates over all the legs in a route making latlngs and totalling distance
-function processLegs( legs ){
-    var keys = Object.keys( legs ),
-        key,
-        totalTravelTimeMins = 0;
-    for( var i = 0, iLimit = keys.length; i < iLimit; i++ ){
-        key = keys[i];
-        processLeg(legs[key]);
-
-        legs[key] = new Leg( legs[key] );
-
-        totalTravelTimeMins += legs[key].travel_time_mins;
-    }
-    return totalTravelTimeMins;
-}
 
 
-// 
+
+/**
+ * Processes a single leg, turning it's points into instances of Point class 
+ * Also, produced a line and totals the distance
+ * @param {object} leg
+ */
 function processLeg( leg ){
-    var total_distance = 0;
-    var line = [];
+    var total_distance = 0,
+        line = [];
 
-    // Iterate over all the points
+    // Iterate over array of points, converting to an object, and building a line (an array of latlngs) while we're at it
     for( var i = 0, iLimit = leg.points.length; i < iLimit; i++ ){
 
         // Convert the element to a Point object
@@ -254,7 +274,7 @@ function processLeg( leg ){
         // Add the latlng to the line
         line.push( leg.points[i].latlng );
 
-        // Set the distance to this point, for the previous point
+        // Set the previous point's distance_to_next (which is this point)
         if( i > 0 ){
             leg.points[i-1].distance_to_next = leg.points[i-1].latlng.distanceTo( leg.points[i].latlng );
 
@@ -262,79 +282,91 @@ function processLeg( leg ){
         }
 
     }
-    leg.total_distance = total_distance;
 
-    // Save the line ready to make a polyline later
+
+    // Save the line ready to make a Mapbox polyline later
     leg.line = line;
+
+    // Set the total_distance of the leg
+    leg.total_distance = total_distance;
 
 }
 
 
+/**
+ * Initialiser for turning the raw boat data into active objects
+ */
+(function(){
 
+    // Ensure that the boats data has been loaded
+    if( typeof boats === 'undefined' ){
+        return console.error('boats data is undefined. Have you loaded boats.js?');
+    }
 
-function processBoats(){
     var keys = Object.keys( boats ),
         key;
     for( var i = 0, iLimit = keys.length; i < iLimit; i++ ){
         key = keys[i];
-        boats[key] = processBoat( boats[key] );
+        boats[key] = new Boat(boats[key]);
     }
-}
-processBoats();
-
-function processBoat( boat ){
-    return new Boat(boat);
-}
+})();
 
 
 
 
-// Marker -------------------------------------------------------------- //
-// --------------------------------------------------------------------- //
-
-// Create a marker and add it to the map.
-for( var i = 0, iLimit = boats.length; i < iLimit; i++ ){
-    boat = boats[i];
-    if( typeof boat.schedule !== 'undefined' ){
-
-        boat.setMarker();
-
-    }
-}
-
-
-// Create a counter with a value of 0.
-var j = 0;
 
 
 
-// 1 = Realtime, 2 = Double speed, et cetera
-// 1000 means a day will take 1.44 minutes 
-var timescale = 1; 
-
-var currentdate = new Date(); 
-
-window.currentMinute = ( currentdate.getHours() * 60 ) + currentdate.getMinutes();
-window.currentSecond = window.currentMinute * 60;
+/**
+ * Global multiplier used to speed-up/slow-down/reverse the passage of gametime 
+ *
+ * @type {integer}
+ */
+window.timescale = 1; 
 
 
-// Set as an equasion to avoid "magic numbers"
+/**
+ * Number of seconds in a 24 hour period
+ * Set here as an equasion to avoid "magic numbers" in our code
+ *
+ * @type {integer}
+ */
 window.secondInADay = 24 * 60 * 60;
 
 
+/**
+ * Actual real-world time according to device.
+ * Used to set the initial time at load
+ *
+ * @type {Date}
+ */
+window.dateAtPageLoad = new Date(); 
+
+
+/**
+ * The current gametime as number of seconds after midnight
+ *
+ * @type {integer}
+ */
+window.currentSecond = 0;
+
+
+/**
+ * Initialiser for setting the gametime to real-world time at load
+ */
+(function(){
+    var currentMinute = ( window.dateAtPageLoad.getHours() * 60 ) + window.dateAtPageLoad.getMinutes();
+    window.currentSecond = currentMinute * 60;
+})();
+
+
+
+
+
+/** 
+ * Function that calls itself after a delay, used to control passage of gametime
+ */
 function tick(){
-
-	//var jLimit = routes.west.legs.cumberland.points.length;
-    
-	//marker.setLatLng( routes.west.legs.cumberland.points[j].latlng );
-
-	// Move to the next point of the line
-    // until `j` reaches the length of the array.
-    // if (++j < jLimit){
-    	
-    // } else {
-    // 	j = 0;
-    // }
 
     incMinute();
 
@@ -346,13 +378,15 @@ function tick(){
 tick();
 
 
-// Increments the global time by 1 minute
+/**
+ * Increments the gametime by an amount
+ */
 function incMinute(){
 
-    if( timescale > 0 ){
+    if( window.timescale > 0 ){
         // We are going up
         if( window.currentSecond < window.secondInADay ){
-            window.currentSecond += timescale * 15;
+            window.currentSecond += window.timescale * 15;
         } else {
             window.currentSecond = 0;
         }
@@ -361,7 +395,7 @@ function incMinute(){
         if( window.currentSecond < 0  ){
             window.currentSecond = window.secondInADay;
         } else {
-            window.currentSecond += timescale * 15;
+            window.currentSecond += window.timescale * 15;
         }
     }
 
@@ -373,31 +407,46 @@ function incMinute(){
 }
 
 
+/**
+ * Iterate over boats querying where they should be
+ */
+function renderBoatLocations(){
+    Object.keys(boats).forEach( function(boatKey){
+        boats[boatKey].whereShouldYouBeNow();
+    });
+}
 
 
-// Clock --------------------------------------------------------------- //
-// --------------------------------------------------------------------- //
 
 
+// ------------------------------ Clock & Controls --------------------------------------------- //
+// --------------------------------------------------------------------------------------------- //
 
 
 elemTimeSlider = document.getElementById('timeSlider');
 elemTimeInput = document.getElementById('TimeInput');
 
 elemTimeSlider.addEventListener("input", function(){
-	elemTimeInput.value = timescale = parseInt(this.value);
+	elemTimeInput.value = window.timescale = parseInt(this.value);
 });
 
 elemTimeInput.addEventListener("keyup", function(){
     if( this.value > 24 ){
-        elemTimeSlider.value = timescale = parseInt(this.value) = 1000;
+        elemTimeSlider.value = window.timescale = parseInt(this.value) = 1000;
     } else if( this.value < -24 ){ 
-        elemTimeSlider.value = timescale = this.value = -24;
+        elemTimeSlider.value = window.timescale = this.value = -24;
     } else {
-        elemTimeSlider.value = timescale = parseInt(this.value);
+        elemTimeSlider.value = window.timescale = parseInt(this.value);
     }
 });
 
+
+/**
+ * Sets text content and CSS rules to display the correct time on the analogue clock
+ * @param {integer} hour
+ * @param {integer} minute
+ * @param {integer} second
+ */
 function displayTime( hour, minute, second ){
 
     document.getElementById('time_hour').textContent = numAs2Digits(hour);
@@ -417,7 +466,6 @@ function displayTime( hour, minute, second ){
     document.getElementById('hourHand').style.transform = 'rotate( ' + hourHandDegrees + 'deg )';
 
 }
-
 
 
 /**
@@ -451,6 +499,18 @@ function setCurrentClockJump( hour ){
 
 
 
+
+
+
+
+
+
+
+
+
+/* --------------------------- Helper functions -------------------------------------- */
+/* ----------------------------------------------------------------------------------- */
+
 function numAs2Digits( num ){
     var strNum = num.toString();
     if( num < 10 ){
@@ -459,29 +519,12 @@ function numAs2Digits( num ){
     return strNum;
 }
 
-
-
-
-function renderBoatLocations(){
-    var boat,
-        currentLeg;
-    // Loop over boats querying where they should be
-    for( var i = 0, iLimit = boats.length; i < iLimit; i++ ){
-        boat = boats[i];
-        if( typeof boat.schedule !== 'undefined' ){
-            currentLeg = boat.whereShouldYouBeNow();
-        }
-    }
-}
-
-
-// Take a time in the form of hh:mm and returns integer minutes from midnight
+/**
+ * Converts a time to minutes
+ * @param {string} strTime time in the form of hh:mm
+ * @return {integer} Number of minutes from midnight
+ */
 function convertTimeToMins( strTime ){
     var parts = strTime.split(':');
     return ( parseInt(parts[0]) * 60 ) + parseInt(parts[1]);
-}
-
-// Compares 2 numbers
-function aIsLaterThanB( firstMin, secondMin ){
-    return firstMin > secondMin ? true : false;
 }
