@@ -125,7 +125,7 @@ function Boat( boatData ){
     if( Array.isArray(this.schedule) ){
         this.schedule.forEach( function(sched){
             route = routes[ sched.route ];
-            this.timedPositions = route.calculateTimedPositions( sched.start_time );
+            this.timedPositions = this.timedPositions.concat( route.calculateTimedPositions( sched.start_time ) );
         }, this);
     }
 
