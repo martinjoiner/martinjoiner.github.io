@@ -16,6 +16,11 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 // ------------------------ Class definitions -------------------------- //
 // --------------------------------------------------------------------- //
 
+/**
+ * Route class 
+ * @param {object} Raw JSON data defined
+ * @constructor
+ */
 function Route( routeData ){
 
     this.total_travel_time_mins = routeData.total_travel_time_mins;
@@ -25,42 +30,57 @@ function Route( routeData ){
 
     this.legKeys = Object.keys( this.legs );
 
-    // Method to display route on map
-    this.showOnMap = (function(){
-
-        var polyline_options = {
-            color: this.color
-        };
-
-        var polylines = [],
-            legKey,
-            cnt = 0;
-        // Iterate over each leg 
-        for( legKey in this.legs ){
-            // Add a polyline for each
-            polylines[cnt] = L.polyline(this.legs[legKey].line, polyline_options).addTo(map);
-            cnt++;
-        }
-    });
-
-    // Takes a start time and returns positions and times
-    this.calculateTimedPositions = (function( start_time ){
-        var curMins = convertTimeToMins(start_time);
-        var timedPositions = [];
-
-        // Iterate over legs
-        this.legKeys.forEach( function(legKey){
-            var leg = this.legs[legKey];
-            timedPositions = timedPositions.concat( leg.calculateTimedPositions(curMins) );
-            curMins += leg.travel_time_mins;
-        }, this);
-
-        return timedPositions;
-    });
 }
 
 
+/**
+ * (Public method of Route objects)
+ * Display route on map
+ */
+Route.prototype.showOnMap = function(){
 
+    var polyline_options = {
+        color: this.color
+    };
+
+    var polylines = [],
+        legKey,
+        cnt = 0;
+    // Iterate over each leg 
+    for( legKey in this.legs ){
+        // Add a polyline for each
+        polylines[cnt] = L.polyline(this.legs[legKey].line, polyline_options).addTo(map);
+        cnt++;
+    }
+}
+
+
+/**
+ * (Public method of Route objects)
+ * Calculates all the timed positions on legs based on a start_time
+ * @param {string} start_time A time in for format of 'HH:MM' 
+ * @return {array} Many objects representing positions and times
+ */
+Route.prototype.calculateTimedPositions = function( start_time ){
+    var curMins = convertTimeToMins(start_time);
+    var timedPositions = [];
+
+    // Iterate over legs
+    this.legKeys.forEach( function(legKey){
+        var leg = this.legs[legKey];
+        timedPositions = timedPositions.concat( leg.calculateTimedPositions(curMins) );
+        curMins += leg.travel_time_mins;
+    }, this);
+
+    return timedPositions;
+}
+
+
+/**
+ * Leg class
+ * @param {object} legData Raw JSON data
+ * @constructor
+ */
 function Leg( legData ){
     this.line = legData.line;
     this.points = legData.points;
@@ -81,20 +101,25 @@ function Leg( legData ){
         var curSeconds = start_minutes * 60,
             timedPositions = [];
 
-        for( var i = 0, iLimit = this.points.length, thisPoint; i < iLimit; i++ ){
-            thisPoint = this.points[i];
+        this.points.forEach( function(thisPoint){
             timedPositions.push( { latlng: thisPoint.latlng, time_seconds: curSeconds } );
             curSeconds += thisPoint.seconds_to_next;
-        }
+        }, this);
         return timedPositions;
     });
 }
 
 
-
+/**
+ * Point class
+ * @param {object} Containing lat, lng, distance_to_next
+ * @constructor
+ */
 function Point( pointData ){
-    this.lat = pointData.lat;
-    this.lng = pointData.lng;
+
+    // Adorns this point with a glorious latlng object
+    this.latlng = L.latLng(pointData.lat, pointData.lng);
+
     this.distance_to_next = pointData.distance_to_next;
 
     this.setSecondsToNext = (function( leg_total_distance, leg_travel_time_seconds){
@@ -105,13 +130,14 @@ function Point( pointData ){
         this.seconds_to_next = ( this.distance_to_next / leg_total_distance ) * leg_travel_time_seconds;
     });
 
-    // Adorns this point with a glorious latlng object
-    this.latlng = L.latLng(this.lat, this.lng);
-
 }
 
 
-
+/**
+ * Boat class
+ * @param {object} boatData Raw JSON data containing boat_name, color, schedule
+ * @constructor
+ */
 function Boat( boatData ){
 
     this.name = boatData.boat_name;
@@ -160,7 +186,6 @@ function Boat( boatData ){
         return false;
     });
 
-
 }
 
 
@@ -169,8 +194,15 @@ function Boat( boatData ){
 // --------------------------------------------------------------------- //
 
 
-// Packs out the routes data with calculated figures that are helpful (eg. length of a section)
-function processRoutes(){
+/**
+ * Initialises the supplied routes JSON to be objects of type Route
+ * Packs out the routes data with calculated figures that are helpful (eg. length of a section)
+ * then hands them to the constructor
+ */
+(function(){
+    if( typeof routes === 'undefined' ){
+        return console.error('routes data is undefined. Have you loaded route.js?');
+    }
 	var keys = Object.keys( routes ),
 		key;
 	for( var i = 0, iLimit = keys.length; i < iLimit; i++ ){
@@ -180,8 +212,7 @@ function processRoutes(){
         // Show Route On Map
         routes[key].showOnMap();
 	}
-}
-processRoutes();
+})();
 
 
 // Give a route a total_travel_time_mins value
