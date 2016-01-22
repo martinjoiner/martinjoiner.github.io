@@ -275,7 +275,7 @@ routes = {
 				    {"lat":51.44879184776521,"lng":-2.5969576835632324}
 				],
 				"stop_name": "Prince Street",
-				"travel_time_mins": 2 // TODO: check this
+				"travel_time_mins": 3 // TODO: check this
 			},
 			"princestreetbathurstbasin": {
 				"points": [
