@@ -29,47 +29,47 @@ boats = [
 		"schedule": [
 			{
 				"start_time": "09:50",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "10:30",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "11:10",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "11:50",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "12:30",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "13:30",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "14:10",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "14:50",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "15:30",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "16:10",
-				"route": "east",
+				"route": "east"
 			},
 			{
 				"start_time": "16:50",
-				"route": "east",
+				"route": "east"
 			}
 		]
 	},
@@ -79,7 +79,7 @@ boats = [
 		"schedule": [
 			{
 				"start_time": "11:20",
-				"route": "east",
+				"route": "east"
 			}
 		]
 	},
